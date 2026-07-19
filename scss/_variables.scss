@@ -1,12 +1,23 @@
 //fondos
 $color-fondo: #34ff34;
 $color-fondo2: #fcc359;
+$color-fondo3: #ffd1d9;
 
 //colores tipografias
 $tipo-front: #060672;
 $tipo-back: #522200;
 
 //estilo card
+
+@mixin cajagrid {
+  display: grid;
+  grid-template-columns: 250px 250px 250px;
+  grid-template-rows: 160px auto;
+  background-color: $color-fondo3;
+  gap: 15px;
+  padding: 20px
+}
+
 @mixin card {
     position: absolute;
     top: 0;
@@ -16,6 +27,7 @@ $tipo-back: #522200;
     backface-visibility: hidden;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
     text-align: center;
+    border-radius: 50px;
 }
 
 @mixin cardstyle {
