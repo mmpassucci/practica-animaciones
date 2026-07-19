@@ -1,0 +1,28 @@
+//fondos
+$color-fondo: #34ff34;
+$color-fondo2: #fcc359;
+
+//colores tipografias
+$tipo-front: #060672;
+$tipo-back: #522200;
+
+//estilo card
+@mixin card {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+    border-radius: 40px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    text-align: center;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+}
+
+@mixin cardstyle {
+     border: 1px solid #ddd;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
