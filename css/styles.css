@@ -1,53 +1,58 @@
-.container {
-  perspective: 600px;
-  width: 300px;
-  height: 200px;
-  margin: 40px auto;
-}
-
-.container__card {
-  position: relative;
-  width: 100%;
-  height: 100%;
-  transform-style: preserve-3d;
-  transition: transform 800ms ease;
-}
-
-.card__front {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  backface-visibility: hidden;
+body {
+  margin: auto;
   font-family: Verdana, Geneva, Tahoma, sans-serif;
-  text-align: center;
-  display: flex;
-  align-items: center;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat 3, 400px;
+  grid-template-rows: repeat(2, 300px);
+  background: #ffd1d9;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 14px;
+  perspective: 600px;
   justify-content: center;
-  background-color: #34ff34;
+  align-items: center;
+}
+
+.grid__card {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+  background-color: #fcc359;
+  width: 300px;
+  height: 150px;
+  padding: 20px;
+  color: #060672;
+  border-radius: 50px;
+  padding: 20px;
+  position: relative; /* para que absolute funcione */
+  transform-style: preserve-3d;
+  transition: transform 600ms ease;
+}
+
+.card__front,
+.card__back {
+  position: absolute;
+  inset: 0; /* top/right/bottom/left: 0 */
+  backface-visibility: hidden;
+}
+
+.card__front,
+.card__back, a {
+  align-self: center;
   color: #060672;
 }
 
 .card__back {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  backface-visibility: hidden;
-  font-family: Verdana, Geneva, Tahoma, sans-serif;
-  text-align: center;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background-color: #fcc359;
+  transform: rotateY(180deg);
   color: #522200;
-  transform: rotateY(180deg); /* consigna */
 }
 
-.container:hover .container__card,
-.container:focus .container__card {
+/*hover + focus */
+.grid__card:hover,
+.grid__card:focus {
   transform: rotateY(180deg);
 }
 
